@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='LoginStyle.css') }}">
+</head>
+<body>
+<h1>Login Page</h1>
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    {{ form.username }}
+    {{ form.password }}
+    {{ form.submit }}
+</form>
+<a href="{{ url_for('register') }}">Don't have an account? Sign up</a><br>
+</body>
+</html>
