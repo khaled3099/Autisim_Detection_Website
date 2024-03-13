@@ -5,7 +5,26 @@
     <title>Dashboard</title>
 </head>
 <body>
-<h1>Hello You are logged in</h1>
-<a href="{{url_for('logout')}}">Press here to logout</a>
+    <h1>Hello, You are logged in</h1>
+    <form method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.image.label }}
+            {{ form.image() }}
+            {% for error in form.image.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+    {% if prediction_result %}
+    <div>
+        <h2>Prediction Result:</h2>
+        <p>{{ prediction_result }}</p>
+    </div>
+    {% endif %}
+    <a href="{{ url_for('logout') }}">Press here to logout</a>
 </body>
 </html>
