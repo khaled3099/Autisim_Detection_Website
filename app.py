@@ -1,15 +1,15 @@
 import os
 
+import numpy as np
+import tensorflow as tf
+from PIL import Image
 from flask import Flask, render_template, url_for, redirect
+from flask_bcrypt import Bcrypt
+from flask_login import UserMixin, login_user, LoginManager, logout_user, login_required
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import UserMixin, login_user, LoginManager, logout_user, current_user, login_required
 from flask_wtf import FlaskForm
 from wtforms.fields.simple import StringField, SubmitField, FileField
 from wtforms.validators import InputRequired, Length, ValidationError
-from flask_bcrypt import Bcrypt
-from PIL import Image
-import tensorflow as tf
-import numpy as np
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
