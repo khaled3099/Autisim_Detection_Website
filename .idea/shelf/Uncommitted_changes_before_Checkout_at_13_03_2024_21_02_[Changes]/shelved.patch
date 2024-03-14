@@ -1,0 +1,66 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"a34fb1a4-3d33-4470-8deb-572f85b60d1e\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/modules.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/pythonProject.iml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n        <option value=\"HTML File\" />\r\n        <option value=\"CSS File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"FlaskConsoleOptions\" custom-start-script=\"import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\\nApp: %s [%s]\\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))\">\r\n    <envs>\r\n      <env key=\"FLASK_APP\" value=\"app\" />\r\n    </envs>\r\n    <option name=\"myCustomStartScript\" value=\"import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\\nApp: %s [%s]\\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))\" />\r\n    <option name=\"myEnvs\">\r\n      <map>\r\n        <entry key=\"FLASK_APP\" value=\"app\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"associatedIndex\": 6\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"2dUr6GHjhlFVcpVF3bykj7WqQXx\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"DefaultHtmlFileTemplate\": \"HTML File\",\r\n    \"JavaScript Debug.home.html.executor\": \"Run\",\r\n    \"JavaScript Debug.login.html.executor\": \"Run\",\r\n    \"JavaScript Debug.register.html.executor\": \"Run\",\r\n    \"Python.app.executor\": \"Run\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/Famille/Desktop/Project_1/pythonProject/instance/database.db\",\r\n    \"list.type.of.created.stylesheet\": \"CSS\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"settings.editor.selected.configurable\": \"com.jetbrains.python.configuration.PythonContentEntriesConfigurable\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-python-sdk-5a2391486177-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13763.11\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"a34fb1a4-3d33-4470-8deb-572f85b60d1e\" name=\"Changes\" comment=\"\" />\r\n      <created>1710073320499</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1710073320499</updated>\r\n      <workItem from=\"1710073336913\" duration=\"14770000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/pythonProject$app.coverage\" NAME=\"app Coverage Results\" MODIFIED=\"1710088793683\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,13 +5,7 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="a34fb1a4-3d33-4470-8deb-572f85b60d1e" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/instance/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/database.db" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -39,14 +33,19 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="master" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="ProblemsViewState">
+     <option name="selectedTabId" value="CurrentFile" />
+   </component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "associatedIndex": 6
+-}]]></component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 6
++}</component>
+   <component name="ProjectId" id="2dUr6GHjhlFVcpVF3bykj7WqQXx" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+     <ConfirmationsSetting value="1" id="Add" />
+@@ -64,7 +63,7 @@
+     "Python.app.executor": "Run",
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "git-widget-placeholder": "master",
++    "git-widget-placeholder": "firas",
+     "ignore.virus.scanning.warn.message": "true",
+     "last_opened_file_path": "C:/Users/Famille/Desktop/Project_1/pythonProject/instance/database.db",
+     "list.type.of.created.stylesheet": "CSS",
+@@ -100,6 +99,6 @@
+     <option name="version" value="3" />
+   </component>
+   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+-    <SUITE FILE_PATH="coverage/pythonProject$app.coverage" NAME="app Coverage Results" MODIFIED="1710088793683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/pythonProject$app.coverage" NAME="app Coverage Results" MODIFIED="1710359661353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+   </component>
+ </project>
+\ No newline at end of file

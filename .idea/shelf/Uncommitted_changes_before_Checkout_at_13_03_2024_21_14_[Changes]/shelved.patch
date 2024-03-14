@@ -1,0 +1,299 @@
+Index: static/style.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@import url();\r\n*{\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n    font-family: 'Roboto', 'sans-serif';\r\n}\r\n\r\nheader{\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    padding: 20px 100px;\r\n    \r\n    display: flex;\r\n    justify-content:space-between;\r\n    align-items: center;\r\n    z-index: 99px;\r\n}\r\n\r\n.logo{\r\n    font-size: 2em;\r\n    color:rgb(0, 0, 0) ;\r\n    user-select: none;\r\n   \r\n}\r\n\r\n.navigation a{\r\n\r\n    position: relative;\r\n    font-size: 1.1em;\r\n    font-weight: 900;\r\n    color: rgb(3, 11, 11);\r\n    text-decoration: none;*\r\n    font-weight: 500;\r\n    margin-left: 40px;\r\n\r\n}\r\n\r\n.content .button-login{\r\n    \r\n    width: 130px;\r\n    height: 50px;\r\n    background: rgb(255, 255, 255);\r\n    border : 2px solid #000000;\r\n    outline: none;\r\n    border-radius: 6px;\r\n    cursor: pointer;\r\n    font-size: 1.1em;\r\n    color : #000000;\r\n    font-weight: 500;\r\n    margin-left: 40px;\r\n    transition: .5s;\r\n}\r\n\r\n.content .button-login:hover{\r\n    background: #000000;\r\n    color:rgb(255, 255, 255);\r\n    \r\n}\r\n\r\n.navigation  a::after{\r\n    content: '';\r\n    position: absolute;\r\n    left: 0;\r\n    bottom:-6px;\r\n    width: 100%;\r\n    height :3px;\r\n    background: #000000;\r\n    border-radius:  5px;\r\n    transform-origin:right ;\r\n    transform: scaleX(0);\r\n    transition: transform .5s;\r\n\r\n}\r\n\r\n.navigation  a:hover::after{\r\n    transform: scaleX(1);\r\n    transform-origin: left;\r\n}\r\n\r\nbody{\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    min-height: 100vh;\r\n    background: url('HomeBg-fotor-20240313115624.jpg') no-repeat;\r\n    background-size: cover;\r\n    background-position: center;\r\n\r\n}\r\n\r\n.content{\r\n    user-select: none;\r\n    width: 100%;\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    text-align: center\r\n}\r\n\r\n.content h1{\r\n    margin-top:20px ;\r\n    margin-bottom: -40px;\r\n    font-size: 7em;\r\n    color: #ffffff;\r\n}\r\n\r\n.content p{\r\n    color: #ffffff;\r\n    margin:20px;\r\n    font-weight: 100;\r\n    line-height: 25px;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/static/style.css b/static/style.css
+--- a/static/style.css	(revision fb57ac36d6dad8ed7006f640125f2b515f2d7220)
++++ b/static/style.css	(date 1710360572046)
+@@ -1,86 +1,76 @@
+-@import url();
+-*{
++* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+-    font-family: 'Roboto', 'sans-serif';
++    font-family: 'Roboto', sans-serif;
+ }
+ 
+-header{
++header {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     padding: 20px 100px;
+-    
+     display: flex;
+-    justify-content:space-between;
++    justify-content: space-between;
+     align-items: center;
+-    z-index: 99px;
+ }
+ 
+-.logo{
++.logo {
+     font-size: 2em;
+-    color:rgb(0, 0, 0) ;
++    color: rgb(0, 0, 0);
+     user-select: none;
+-   
+ }
+ 
+-.navigation a{
+-
++.navigation a {
+     position: relative;
+     font-size: 1.1em;
+-    font-weight: 900;
++    font-weight: 500; /* Corrected */
+     color: rgb(3, 11, 11);
+-    text-decoration: none;*
+-    font-weight: 500;
++    text-decoration: none;
+     margin-left: 40px;
+-
+ }
+ 
+-.content .button-login{
+-    
++.content .button-login {
+     width: 130px;
+     height: 50px;
+     background: rgb(255, 255, 255);
+-    border : 2px solid #000000;
++    border: 2px solid #000000;
+     outline: none;
+     border-radius: 6px;
+     cursor: pointer;
+     font-size: 1.1em;
+-    color : #000000;
++    color: #000000;
+     font-weight: 500;
+     margin-left: 40px;
+-    transition: .5s;
++    transition: 0.5s;
+ }
+ 
+-.content .button-login:hover{
++.content .button-login:hover {
+     background: #000000;
+-    color:rgb(255, 255, 255);
+-    
++    color: rgb(255, 255, 255);
+ }
+ 
+-.navigation  a::after{
++.navigation a::after {
+     content: '';
+     position: absolute;
+     left: 0;
+-    bottom:-6px;
++    bottom: -6px;
+     width: 100%;
+-    height :3px;
++    height: 3px;
+     background: #000000;
+-    border-radius:  5px;
+-    transform-origin:right ;
++    border-radius: 5px;
++    transform-origin: right;
+     transform: scaleX(0);
+-    transition: transform .5s;
+-
++    transition: transform 0.5s;
+ }
+ 
+-.navigation  a:hover::after{
++.navigation a:hover::after {
+     transform: scaleX(1);
+     transform-origin: left;
+ }
+ 
+-body{
++body {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+@@ -88,28 +78,27 @@
+     background: url('HomeBg-fotor-20240313115624.jpg') no-repeat;
+     background-size: cover;
+     background-position: center;
+-
+ }
+ 
+-.content{
++.content {
+     user-select: none;
+     width: 100%;
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+-    text-align: center
++    text-align: center;
+ }
+ 
+-.content h1{
+-    margin-top:20px ;
++.content h1 {
++    margin-top: 20px;
+     margin-bottom: -40px;
+     font-size: 7em;
+     color: #ffffff;
+ }
+ 
+-.content p{
++.content p {
+     color: #ffffff;
+-    margin:20px;
++    margin: 20px;
+     font-weight: 100;
+     line-height: 25px;
+-}
+\ No newline at end of file
++}
+Index: templates/home.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>Home</title>\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\r\n</head>\r\n<body>\r\n    <div class=\"banner\"></div>\r\n       <header>\r\n         <h2 class=\"logo\">ASD</h2>\r\n         <nav class=\"navigation\">\r\n            <a href=\"\">Home</a>\r\n            <a href=\"\">About</a>\r\n            <a href=\"\">Contact</a>\r\n            \r\n          </nav>\r\n       </header>\r\n      <div class=\"content\">\r\n                <h1>DETECT AUTISM</h1>\r\n                <p>using artificial intelligence you can detect autism in a kid by his face picture </p>\r\n            <div>\r\n                <a href=\"{{ url_for('login') }}\"><button class=\"button-login\" >Login</button></a>\r\n                <a href=\"{{ url_for('register') }}\"></a><button class=\"button-login\">Register</button></a>\r\n            </div>    \r\n        \r\n        </div>\r\n\r\n\r\n    \r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/home.html b/templates/home.html
+--- a/templates/home.html	(revision fb57ac36d6dad8ed7006f640125f2b515f2d7220)
++++ b/templates/home.html	(date 1710360817128)
+@@ -3,31 +3,24 @@
+ <head>
+     <meta charset="UTF-8">
+     <title>Home</title>
+-    <link rel="stylesheet" type="text/css" href="style.css">
++    <link rel="stylesheet" type="text/css" href="../static/style.css">
+ </head>
+ <body>
+-    <div class="banner"></div>
+-       <header>
+-         <h2 class="logo">ASD</h2>
+-         <nav class="navigation">
+-            <a href="">Home</a>
+-            <a href="">About</a>
+-            <a href="">Contact</a>
+-            
+-          </nav>
+-       </header>
+-      <div class="content">
+-                <h1>DETECT AUTISM</h1>
+-                <p>using artificial intelligence you can detect autism in a kid by his face picture </p>
+-            <div>
+-                <a href="{{ url_for('login') }}"><button class="button-login" >Login</button></a>
+-                <a href="{{ url_for('register') }}"></a><button class="button-login">Register</button></a>
+-            </div>    
+-        
+-        </div>
+-
+-
+-    
+-
++    <header>
++        <h2 class="logo">ASD</h2>
++        <nav class="navigation">
++            <a href="#">Home</a>
++            <a href="#">About</a>
++            <a href="#">Contact</a>
++        </nav>
++    </header>
++    <div class="content">
++        <h1>DETECT AUTISM</h1>
++        <p>Using artificial intelligence, you can detect autism in a child by their facial picture.</p>
++        <div>
++            <a href="#">Login</a> <!-- Update the href attribute with appropriate URLs -->
++            <a href="#">Register</a> <!-- Update the href attribute with appropriate URLs -->
++        </div>    
++    </div>
+ </body>
+-</html>
+\ No newline at end of file
++</html>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"a34fb1a4-3d33-4470-8deb-572f85b60d1e\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/modules.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/pythonProject.iml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n        <option value=\"HTML File\" />\r\n        <option value=\"CSS File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"FlaskConsoleOptions\" custom-start-script=\"import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\\nApp: %s [%s]\\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))\">\r\n    <envs>\r\n      <env key=\"FLASK_APP\" value=\"app\" />\r\n    </envs>\r\n    <option name=\"myCustomStartScript\" value=\"import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\\nApp: %s [%s]\\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))\" />\r\n    <option name=\"myEnvs\">\r\n      <map>\r\n        <entry key=\"FLASK_APP\" value=\"app\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"associatedIndex\": 6\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"2dUr6GHjhlFVcpVF3bykj7WqQXx\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"DefaultHtmlFileTemplate\": \"HTML File\",\r\n    \"JavaScript Debug.home.html.executor\": \"Run\",\r\n    \"JavaScript Debug.login.html.executor\": \"Run\",\r\n    \"JavaScript Debug.register.html.executor\": \"Run\",\r\n    \"Python.app.executor\": \"Run\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/Famille/Desktop/Project_1/pythonProject/instance/database.db\",\r\n    \"list.type.of.created.stylesheet\": \"CSS\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"settings.editor.selected.configurable\": \"com.jetbrains.python.configuration.PythonContentEntriesConfigurable\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-python-sdk-5a2391486177-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13763.11\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"a34fb1a4-3d33-4470-8deb-572f85b60d1e\" name=\"Changes\" comment=\"\" />\r\n      <created>1710073320499</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1710073320499</updated>\r\n      <workItem from=\"1710073336913\" duration=\"14770000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/pythonProject$app.coverage\" NAME=\"app Coverage Results\" MODIFIED=\"1710088793683\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision fb57ac36d6dad8ed7006f640125f2b515f2d7220)
++++ b/.idea/workspace.xml	(date 1710360705503)
+@@ -5,13 +5,9 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="a34fb1a4-3d33-4470-8deb-572f85b60d1e" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -39,14 +35,19 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="firas" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="ProblemsViewState">
+     <option name="selectedTabId" value="CurrentFile" />
+   </component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "associatedIndex": 6
+-}]]></component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 6
++}</component>
+   <component name="ProjectId" id="2dUr6GHjhlFVcpVF3bykj7WqQXx" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+     <ConfirmationsSetting value="1" id="Add" />
+@@ -64,7 +65,7 @@
+     "Python.app.executor": "Run",
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "git-widget-placeholder": "master",
++    "git-widget-placeholder": "firas",
+     "ignore.virus.scanning.warn.message": "true",
+     "last_opened_file_path": "C:/Users/Famille/Desktop/Project_1/pythonProject/instance/database.db",
+     "list.type.of.created.stylesheet": "CSS",
+@@ -98,8 +99,19 @@
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
+   </component>
+   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+-    <SUITE FILE_PATH="coverage/pythonProject$app.coverage" NAME="app Coverage Results" MODIFIED="1710088793683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/pythonProject$app.coverage" NAME="app Coverage Results" MODIFIED="1710360232737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+   </component>
+ </project>
+\ No newline at end of file

@@ -1,4 +1,3 @@
-@import url();
 *{
     margin: 0;
     padding: 0;
@@ -16,7 +15,6 @@ header{
     display: flex;
     justify-content:space-between;
     align-items: center;
-    z-index: 99px;
 }
 
 .logo{
@@ -85,7 +83,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('HomeBackground.jpg') no-repeat;
+    background: url('HomeBg-fotor-20240313115624.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 
