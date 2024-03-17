@@ -4,15 +4,38 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='LoginStyle.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-<h1>Login Page</h1>
-<form method="POST" action="">
-    {{ form.hidden_tag() }}
-    {{ form.username }}
-    {{ form.password }}
-    {{ form.submit }}
-</form>
-<a href="{{ url_for('register') }}">Don't have an account? Sign up</a><br>
+    <header>
+        <h2 class="logo">ASD</h2>
+        <nav class="navigation">
+           <a href="home.html">Home</a>
+           <a href="">About</a>
+           <a href="">Contact</a>
+
+         </nav>
+      </header>
+      <div class="wrapper">
+        <form action="">
+            <h1>LOGIN</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    
+                </div>
+                
+               
+                <button type="submit" class="btn">Login</button>
+                <div class="register-link">
+                    <p>D'ont have an account <a href="{{ url_for('register') }}">Register</a></p>
+                </div>
+                    
+        </form>
+      </div>
+
 </body>
 </html>
