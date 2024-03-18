@@ -3,39 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="../static/LoginStyle.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='LoginStyle.css') }}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header>
         <h2 class="logo">ASD</h2>
         <nav class="navigation">
-           <a href="home.html">Home</a>
+           <a href="{{ url_for('home') }}">Home</a>
            <a href="">About</a>
            <a href="">Contact</a>
-
          </nav>
       </header>
       <div class="wrapper">
-        <form action="">
+        <form method="POST" action="{{ url_for('login') }}">
             <h1>LOGIN</h1>
-                <div class="input-box">
-                    <input type="text" placeholder="Username" required>
-                    
-                </div>
-                <div class="input-box">
-                    <input type="password" placeholder="Password" required>
-                    
-                </div>
-                
-               
-                <button type="submit" class="btn">Login</button>
-                <div class="register-link">
-                    <p>D'ont have an account <a href="{{ url_for('register') }}">Register</a></p>
-                </div>
-                    
+            {{ form.hidden_tag() }}
+            <div class="input-box">
+                {{ form.username(class="input-field", placeholder="Username", required=True) }}
+                {% for error in form.username.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="input-box">
+                {{ form.password(class="input-field", placeholder="Password", required=True) }}
+                {% for error in form.password.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <div class="register-link">
+                <p>Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+            </div>
         </form>
       </div>
-
 </body>
 </html>

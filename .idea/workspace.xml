@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a34fb1a4-3d33-4470-8deb-572f85b60d1e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a6f058c5-bc94-4ec4-b2d3-809844acd943.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a6f058c5-bc94-4ec4-b2d3-809844acd943.xml" afterDir="false" />
+    <list default="true" id="a34fb1a4-3d33-4470-8deb-572f85b60d1e" name="Changes" comment="Fixed register button and added displaying to the selected image">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/Autistic.1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/Autistic.1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/Autistic.4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/Autistic.4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/Autistic.6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/Autistic.6.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +117,9 @@
       <workItem from="1710345022116" duration="719000" />
       <workItem from="1710345837980" duration="35000" />
       <workItem from="1710346074983" duration="844000" />
-      <workItem from="1710515520409" duration="1965000" />
+      <workItem from="1710515520409" duration="3481000" />
+      <workItem from="1710696190886" duration="1793000" />
+      <workItem from="1710774228796" duration="1132000" />
     </task>
     <task id="LOCAL-00001" summary="Adding prediction funcionality">
       <option name="closed" value="true" />
@@ -131,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710345207957</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed register button and added displaying to the selected image">
+      <option name="closed" value="true" />
+      <created>1710517949485</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710517949485</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,9 +156,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adding prediction funcionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding prediction funcionality" />
+    <MESSAGE value="Fixed register button and added displaying to the selected image" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed register button and added displaying to the selected image" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/pythonProject$app.coverage" NAME="app Coverage Results" MODIFIED="1710515805884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pythonProject$app.coverage" NAME="app Coverage Results" MODIFIED="1710696250632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
