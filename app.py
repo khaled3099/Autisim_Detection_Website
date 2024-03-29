@@ -24,7 +24,7 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "login"
 
-model = tf.keras.models.load_model('C:/Users/Famille/Desktop/Nouveau dossier (2)/vgg19_model_1.h5')
+model = tf.keras.models.load_model('C:/Users/Famille/Desktop/Nouveau dossier (3)/Model__.h5')
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -76,8 +76,10 @@ def preprocess_image(image):
 def make_prediction(image):
     preprocessed_image = preprocess_image(image)
     prediction = model.predict(preprocessed_image)
-    return prediction
-
+    if prediction<0.7:
+        return "Autist", prediction
+    else:
+        return "Non autist"
 
 @app.route('/')
 def home():
