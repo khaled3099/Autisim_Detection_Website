@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body>
+    <div class="banner"></div>
+       <header>
+         <h2 class="logo">ASD</h2>
+         <nav class="navigation">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+
+          </nav>
+       </header>
+      <div class="content">
+                <h1>DETECT AUTISM</h1>
+                <p>Using artificial intelligence you can potentially detect autism in a child through advanced facial analysis</p>
+            <div>
+                <a href="{{ url_for('login') }}"><button class="button-login" >Login</button></a>
+                <a href="{{ url_for('register') }}"><button class="button-login">Register</button></a>
+            </div>
+
+        </div>
+
+</body>
+</html>

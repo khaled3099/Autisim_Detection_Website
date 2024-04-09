@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById('image-preview');
+                output.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</head>
+<body>
+    <h1>Hello, You are logged in</h1>
+    <form method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.image.label }}
+            {{ form.image(onchange="previewImage(event)") }}
+            {% for error in form.image.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            <button type="submit" class="button-login">Predict</button>
+        </div>
+    </form>
+    <div>
+        <h2>Uploaded Image:</h2>
+        <img id="image-preview" src="" alt="Preview">
+    </div>
+    {% if r %}
+    <div>
+        <h2>Prediction Result:</h2>
+        <p>{{ r }}</p>
+    </div>
+    {% endif %}
+    <a href="{{ url_for('logout') }}"><button class="button-login">Logout</button></a>
+</body>
+</html>
