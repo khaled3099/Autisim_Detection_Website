@@ -75,29 +75,35 @@ def home():
     return render_template('home.html')
 
 
+from flask import render_template, request, jsonify
 @app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
     form = UploadForm()
     r = None
-    if form.validate_on_submit():
-        img_file = form.image.data
-        img = Image.open(img_file)
 
-        # Preprocess the image as needed
-        img = img.resize((224, 224))  # Resize image if necessary
-        img_array = np.array(img)
-        img_array = img_array / 255.0  # Normalize pixel values to [0, 1]
-        img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            img_file = form.image.data
+            img = Image.open(img_file)
 
-        # Make prediction
-        prediction_result = loaded_model.predict(img_array)
-        if prediction_result>0.5:
-            r=str(1-float(prediction_result))+'% ( Normal )'
-        else:
-            r=str(1-float(prediction_result))+'% ( Autistic )'
+            # Preprocess the image as needed
+            img = img.resize((224, 224))  # Resize image if necessary
+            img_array = np.array(img)
+            img_array = img_array / 255.0  # Normalize pixel values to [0, 1]
+            img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
 
-    return render_template('dashboard.html', form=form,r=r)
+            # Make prediction
+            prediction_result = loaded_model.predict(img_array)
+            if prediction_result > 0.5:
+                r = str(1 - float(prediction_result)) + '% ( Normal )'
+            else:
+                r = str(1 - float(prediction_result)) + '% ( Autistic )'
+
+            return jsonify({'prediction': r})  # Return prediction result as JSON
+
+    return render_template('dashboard.html', form=form, r=r)
+
 
 
 @app.route('/logout', methods=['GET', 'POST'])
@@ -131,6 +137,55 @@ def register():
         return redirect(url_for('login'))
 
     return render_template('register.html', form=form)
+
+
+@app.route('/dashboard_2', methods=['GET', 'POST'])
+@login_required
+def dashboard_2():
+    image_dir = 'C:/Users/Famille/Desktop/ProjetPFA/ProjetFinAnne/static/images'
+    images = os.listdir(image_dir)
+
+    class_0_images = []
+    class_1_images = []
+
+    if request.method == 'POST':
+        for img_name in images:
+            img_path = os.path.join(image_dir, img_name)
+            print("Image Path:", img_path)  # Debug: Print image path
+
+            # Load and preprocess the image
+            with Image.open(img_path) as im:
+                img = load_and_preprocess_image(im)  # Assuming you have a function for this
+                print("Image Shape:", img.shape)  # Debug: Print image shape
+
+            # Make prediction
+            prediction_result = loaded_model.predict(img)  # Assuming loaded_model is defined elsewhere
+            print("Prediction Result:", prediction_result)  # Debug: Print prediction result
+
+            # Classify image based on prediction
+            if prediction_result > 0.5:
+                class_0_images.append(img_name)  # Add image to class 0
+            else:
+                class_1_images.append(img_name)  # Add image to class 1
+
+        print("Class 0 Images:", class_0_images)  # Debug: Print class 0 images
+        print("Class 1 Images:", class_1_images)  # Debug: Print class 1 images
+
+        return render_template('dashboard_2.html', class_0_images=class_0_images, class_1_images=class_1_images)
+
+    return render_template('dashboard_2.html', images=images)
+
+
+
+
+def load_and_preprocess_image(img):
+    imag = img.resize((224, 224))  # Resize image if necessary
+    img_array = np.array(imag)
+    img_array = img_array / 255.0  # Normalize pixel values to [0, 1]
+    img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
+    return img_array
+
+
 
 
 if __name__ == '__main__':

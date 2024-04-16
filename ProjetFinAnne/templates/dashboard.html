@@ -3,20 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
+
     <script>
+        var currentPreview = null; // Variable to keep track of the current image preview
+
         function previewImage(event) {
+            var input = event.target;
             var reader = new FileReader();
+
             reader.onload = function(){
-                var output = document.getElementById('image-preview');
-                output.src = reader.result;
-            }
-            reader.readAsDataURL(event.target.files[0]);
+                var img = document.createElement('img');
+                img.src = reader.result;
+                img.style.maxWidth = '200px'; // Adjust this value to control the maximum width of the preview image
+                var previewContainer = document.getElementById('image-preview'); // Assuming there's a container element with id 'image-preview' to display the preview
+
+                // Clear previous preview
+                if (currentPreview !== null) {
+                    previewContainer.removeChild(currentPreview);
+                }
+
+                // Display new preview
+                previewContainer.appendChild(img);
+                currentPreview = img;
+            };
+
+            reader.readAsDataURL(input.files[0]); // Read the uploaded file as a URL
+        }
+
+        // Function to handle form submission via AJAX
+        function submitForm() {
+            var form = document.getElementById('upload-form');
+            var formData = new FormData(form);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/dashboard', true); // Endpoint to handle form submission
+            xhr.onload = function() {
+                if (xhr.status >= 200 && xhr.status < 400) {
+                    // Successful response
+                    var response = JSON.parse(xhr.responseText);
+                    displayPrediction(response.prediction); // Call function to display prediction result
+                } else {
+                    // Error handling
+                    console.error(xhr.responseText);
+                }
+            };
+            xhr.onerror = function() {
+                // Error handling
+                console.error('Request failed');
+            };
+            xhr.send(formData);
+        }
+
+        // Function to display prediction result
+        function displayPrediction(prediction) {
+            var resultContainer = document.getElementById('prediction-result');
+            resultContainer.textContent = 'Prediction Result: ' + prediction;
         }
     </script>
 </head>
 <body>
     <h1>Hello, You are logged in</h1>
-    <form method="post" enctype="multipart/form-data">
+    <form id="upload-form" enctype="multipart/form-data">
         {{ form.hidden_tag() }}
         <div>
             {{ form.image.label }}
@@ -25,20 +72,13 @@
                 <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </div>
+        <div id="image-preview"></div> <!-- This is the container for displaying the image preview -->
         <div>
-            <button type="submit" class="button-login">Predict</button>
+            <button type="button" class="button-login" onclick="submitForm()">Predict</button>
         </div>
     </form>
-    <div>
-        <h2>Uploaded Image:</h2>
-        <img id="image-preview" src="" alt="Preview">
-    </div>
-    {% if r %}
-    <div>
-        <h2>Prediction Result:</h2>
-        <p>{{ r }}</p>
-    </div>
-    {% endif %}
+    <div id="prediction-result"></div> <!-- This is the container for displaying the prediction result -->
     <a href="{{ url_for('logout') }}"><button class="button-login">Logout</button></a>
+    <a href="{{ url_for('dashboard_2') }}"><button class="button-login">Go to Another Page</button></a>
 </body>
 </html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Images Table</title>
+    <style>
+        .table-container {
+            overflow: auto; /* Enable both horizontal and vertical scrolling */
+            max-width: 40%; /* Adjust maximum width as needed */
+            max-height: 350px; /* Adjust maximum height as needed */
+            margin: 0 auto; /* Center the container horizontally */
+            display: inline-block; /* Display the containers inline */
+            vertical-align: top; /* Align containers to the top */
+            margin-right: 20px; /* Add some space between the tables */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%; /* Table takes full width of its container */
+        }
+
+        td {
+            width: 20%; /* Each cell takes up 20% of the table width */
+            padding: 5px;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            max-height: 100px; /* Adjust maximum image height as needed */
+            display: block; /* Ensure images don't have extra spacing */
+            margin: 0 auto; /* Center the images horizontally */
+        }
+    </style>
+</head>
+<body>
+<form method="POST">
+    <button type="submit">Classify Images</button>
+</form>
+
+<h2>Images Table</h2>
+<div class="table-container">
+    <table>
+        <tr>
+            {% for image in images %}
+            <td>
+                <img src="{{ '/static/images/' ~ image }}"><br>
+                {{ image }}
+            </td>
+            {% if loop.index % 5 == 0 %}
+        </tr><tr>
+            {% endif %}
+            {% endfor %}
+        </tr>
+    </table>
+</div>
+
+<!-- Additional Table 1 -->
+<div style="display: inline-block; vertical-align: top;"> <!-- Container for the class tables -->
+    <div class="table-container">
+        <h2>Class Autist</h2>
+        <table>
+            <tr>
+                {% for image in class_0_images %}
+                <td>
+                    <img src="{{ '/static/images/' ~ image }}"><br>
+                    {{ image }}
+                </td>
+                {% if loop.index % 5 == 0 %}
+            </tr><tr>
+                {% endif %}
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
+
+    <!-- Additional Table 2 -->
+    <div class="table-container">
+        <h2>Class Normal</h2>
+        <table>
+            <tr>
+                {% for image in class_1_images %}
+                <td>
+                    <img src="{{ '/static/images/' ~ image }}"><br>
+                    {{ image }}
+                </td>
+                {% if loop.index % 5 == 0 %}
+            </tr><tr>
+                {% endif %}
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
+</div> <!-- End of container for the class tables -->
+
+</body>
+</html>
