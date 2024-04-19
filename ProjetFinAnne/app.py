@@ -79,30 +79,37 @@ from flask import render_template, request, jsonify
 @app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
-    form = UploadForm()
-    r = None
-
+    r = None  # Initialize an empty message variable
+    message = ''
     if request.method == 'POST':
-        if form.validate_on_submit():
-            img_file = form.image.data
-            img = Image.open(img_file)
-
-            # Preprocess the image as needed
-            img = img.resize((224, 224))  # Resize image if necessary
-            img_array = np.array(img)
-            img_array = img_array / 255.0  # Normalize pixel values to [0, 1]
-            img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
-
-            # Make prediction
-            prediction_result = loaded_model.predict(img_array)
-            if prediction_result > 0.5:
-                r = str(1 - float(prediction_result)) + '% ( Normal )'
+        if 'image' not in request.files:
+            message = 'No file part'
+        else:
+            file = request.files['image']
+            if file.filename == '':
+                message = 'No selected file'
             else:
-                r = str(1 - float(prediction_result)) + '% ( Autistic )'
+                print("Received image:", file.filename)  # Debugging statement
+                # Save the uploaded file
+                imgo = Image.open(file)
+                img_array = load_and_preprocess_image(imgo)
+                print("Image array shape:", img_array.shape)  # Debugging statement
+                prediction_result = loaded_model.predict(img_array)
+                confidence = 1 - float(prediction_result)
+                formatted_confidence = "{:.2f}".format(confidence)  # Format to display only two decimal places
 
-            return jsonify({'prediction': r})  # Return prediction result as JSON
+                if prediction_result > 0.5:
+                    r = f"{formatted_confidence}% ( Normal )"
+                else:
+                    r = f"{formatted_confidence}% ( Autistic )"
+                print("Prediction result:", r)  # Debugging statement
+                message = 'File uploaded successfully'
 
-    return render_template('dashboard.html', form=form, r=r)
+                # Return the prediction result as JSON
+                return jsonify({'result': r, 'message': message})
+
+    # If there's no prediction result yet, return an empty response
+    return render_template('dashboard.html')
 
 
 

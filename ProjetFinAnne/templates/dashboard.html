@@ -2,83 +2,224 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
-
-    <script>
-        var currentPreview = null; // Variable to keep track of the current image preview
-
-        function previewImage(event) {
-            var input = event.target;
-            var reader = new FileReader();
-
-            reader.onload = function(){
-                var img = document.createElement('img');
-                img.src = reader.result;
-                img.style.maxWidth = '200px'; // Adjust this value to control the maximum width of the preview image
-                var previewContainer = document.getElementById('image-preview'); // Assuming there's a container element with id 'image-preview' to display the preview
-
-                // Clear previous preview
-                if (currentPreview !== null) {
-                    previewContainer.removeChild(currentPreview);
-                }
-
-                // Display new preview
-                previewContainer.appendChild(img);
-                currentPreview = img;
-            };
-
-            reader.readAsDataURL(input.files[0]); // Read the uploaded file as a URL
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Path Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-image: url('/static/background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0;
+            color: #000000;
         }
-
-        // Function to handle form submission via AJAX
-        function submitForm() {
-            var form = document.getElementById('upload-form');
-            var formData = new FormData(form);
-
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', '/dashboard', true); // Endpoint to handle form submission
-            xhr.onload = function() {
-                if (xhr.status >= 200 && xhr.status < 400) {
-                    // Successful response
-                    var response = JSON.parse(xhr.responseText);
-                    displayPrediction(response.prediction); // Call function to display prediction result
-                } else {
-                    // Error handling
-                    console.error(xhr.responseText);
-                }
-            };
-            xhr.onerror = function() {
-                // Error handling
-                console.error('Request failed');
-            };
-            xhr.send(formData);
+        header {
+            margin-bottom: 20px;
         }
-
-        // Function to display prediction result
-        function displayPrediction(prediction) {
-            var resultContainer = document.getElementById('prediction-result');
-            resultContainer.textContent = 'Prediction Result: ' + prediction;
+        h1 {
+            margin-bottom: 10px;
         }
-    </script>
+        #file-input {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: rgb(226, 13, 13);
+            border-radius: 5px;
+            outline: none;
+            width: 400px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        #file-path {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .image-container {
+            width: 300px;
+			top:10%;
+            height: 300px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .action-button {
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 50px;
+            background-color: rgb(255, 255, 255);
+            color: #000000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+        .action-button:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        .loading-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            padding: 20px;
+            border: 2px solid #5b5353;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border-radius: 5px;
+            display: none;
+            text-align: center;
+        }
+        .result-container {
+            position: absolute;
+            top: 50%;
+            left: 82%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            border: 2px solid #000000;
+            background-color: transparent;
+            color: #000;
+            border-radius: 5px;
+            display: block;
+            text-align: center;
+        }
+        .go-back{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.3); /* Transparent white background */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+        .groupclass{
+            position: absolute;
+            top: 10%;
+            left: 20px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.3); /* Transparent white background */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+        .button-logout{
+            position: absolute;
+            top: 20%;
+            left: 20px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.3); /* Transparent white background */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, You are logged in</h1>
-    <form id="upload-form" enctype="multipart/form-data">
-        {{ form.hidden_tag() }}
-        <div>
-            {{ form.image.label }}
-            {{ form.image(onchange="previewImage(event)") }}
-            {% for error in form.image.errors %}
-                <span style="color: red;">{{ error }}</span>
-            {% endfor %}
-        </div>
-        <div id="image-preview"></div> <!-- This is the container for displaying the image preview -->
-        <div>
-            <button type="button" class="button-login" onclick="submitForm()">Predict</button>
-        </div>
-    </form>
-    <div id="prediction-result"></div> <!-- This is the container for displaying the prediction result -->
-    <a href="{{ url_for('logout') }}"><button class="button-login">Logout</button></a>
-    <a href="{{ url_for('dashboard_2') }}"><button class="button-login">Go to Another Page</button></a>
+    <header>
+        <h1>Choose an image</h1>
+    </header>
+    <input type="file" id="file-input" accept="image/*" onchange="displayFilePath()">
+    <div id=" file-path"></div>
+    <div class="image-container" id="image-container"></div>
+    <button class="action-button" type="button" onclick="displayresult()"> Start </button>
+    <div class="result-container" id="result-container">    </div>
+    <button class="go-back" id="go-back"> Go Back </button>
+    <a href="{{ url_for('logout') }}"><button class="button-logout">Logout</button></a>
+    <a href="{{ url_for('dashboard_2') }}"><button class="groupclass">Group classification</button></a>
+
+    <script>
+        document.getElementById('file-input').addEventListener('change', function(event) {
+            var input = event.target;
+            var file = input.files[0];
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var imgElement = document.createElement('img');
+                imgElement.src = e.target.result;
+                var imageContainer = document.getElementById('image-container');
+                imageContainer.innerHTML = ''; // Clear previous image
+                imageContainer.appendChild(imgElement);
+            }
+            reader.readAsDataURL(file);
+        });
+
+
+            function displayresult() {
+            // Get the file input element
+            var fileInput = document.getElementById('file-input');
+
+            // Check if any file is selected
+            if (fileInput.files.length > 0) {
+            var file = fileInput.files[0];
+
+            // Check if the selected file is an image
+            if (file.type.match('image.*')) {
+            // Create FormData object to send the file to the server
+            var formData = new FormData();
+            formData.append('image', file);
+
+            // Make an AJAX request to the backend
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/dashboard', true); // Send to your Flask route
+            xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+            // If the request is successful, display the result
+            var result = JSON.parse(xhr.responseText);
+            var resultContainer = document.getElementById('result-container');
+            resultContainer.textContent = result.result;
+            // Display any additional message
+            alert(result.message);
+        } else {
+            // If the request fails, display an error message
+            alert('Prediction failed. Please try again.');
+        }
+        }
+        };
+            xhr.send(formData);
+        } else {
+            // If the selected file is not an image, display an error message
+            alert('Please select an image file.');
+        }
+        } else {
+            // If no file is selected, display an error message
+            alert('Please select an image file.');
+        }
+        }
+
+
+    </script>
 </body>
 </html>
